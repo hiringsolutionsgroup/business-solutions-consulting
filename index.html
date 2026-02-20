@@ -7,150 +7,335 @@
   <title>Business Solutions Consulting in Northern New Jersey | Resource Hub</title>
   <meta
     name="description"
-    content="Local resource hub on business solutions consulting, leadership alignment, and strategic growth for organizations across Northern New Jersey including Passaic, Clifton, Bloomfield, Newark, Jersey City, and Hoboken."
+    content="Business solutions consulting resource hub for Northern New Jersey businesses—Passaic, Clifton, Bloomfield, Newark, Jersey City, Hoboken, and nearby markets—focused on leadership alignment, strategic growth, and organizational clarity."
   />
   <meta name="robots" content="index, follow" />
-  <link
-    rel="canonical"
-    href="https://hiringsolutionsgroup.com/business-solutions/"
-  />
+  <!-- Canonical points to your main service page to reinforce the primary URL -->
+  <link rel="canonical" href="https://hiringsolutionsgroup.com/business-solutions/" />
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 960px;
+    :root{
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#ffffff;
+      --soft:#f9fafb;
+      --card:#ffffff;
+      --accent:#6d28d9; /* purple accent */
+      --accent-2:#4c1d95;
+      --radius:14px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+      line-height:1.65;
+    }
+
+    .wrap{
+      max-width: 980px;
       margin: 0 auto;
-      line-height: 1.6;
-      padding: 24px;
+      padding: 26px 18px 44px;
     }
-    header {
-      margin-bottom: 22px;
+
+    header{
+      padding: 12px 0 18px;
+      margin-bottom: 12px;
     }
-    .tagline {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-top: 6px;
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 12px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
-    .card {
-      border: 1px solid #e6e6e6;
-      border-radius: 12px;
-      padding: 16px;
-      margin: 14px 0;
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: var(--accent);
+      display:inline-block;
     }
-    .cta a {
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3.2vw, 38px);
+      line-height: 1.15;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 78ch;
+    }
+
+    .topbar{
+      margin-top: 16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid #222;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: var(--soft);
     }
-    ul {
-      margin-top: 8px;
+
+    .btn-primary{
+      border-color: transparent;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(109, 40, 217, .18);
     }
-    footer {
-      margin-top: 28px;
+
+    .btn-primary:hover{ background: var(--accent-2); }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    .grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+    }
+
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height:1.25;
+    }
+
+    .card p{
+      margin: 8px 0;
+      color: var(--ink);
+    }
+
+    .muted{
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul,ol{
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li{
+      margin: 6px 0;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 10px;
+    }
+
+    .pill{
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .cta-box{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(109,40,217,.10), rgba(109,40,217,.03));
+      border: 1px solid rgba(109,40,217,.25);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .cta-copy{
+      max-width: 68ch;
+    }
+
+    .cta-copy strong{
+      display:block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    footer{
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
       font-size: 13px;
-      opacity: 0.85;
+    }
+
+    a{ color: var(--accent); }
+    a:hover{ color: var(--accent-2); }
+
+    @media (min-width: 860px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+      .span-2{ grid-column: 1 / -1; }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Business Solutions Consulting Resource Hub for Northern New Jersey</h1>
-    <p class="tagline">
-      Practical guidance for organizations navigating growth, restructuring, and
-      leadership transitions across the Northern NJ + NYC corridor.
-    </p>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="kicker"><span class="dot"></span> Northern NJ Business Consulting Resource</div>
+      <h1>Business Solutions Consulting Resource Hub for Northern New Jersey</h1>
+      <p class="sub">
+        Practical guidance for organizations navigating growth, restructuring, and leadership transitions across the
+        Northern New Jersey + NYC corridor. This page is designed as an educational reference, with one primary link to
+        the full service overview.
+      </p>
 
-  <section class="card">
-    <h2>Service Area Focus</h2>
-    <p>
-      This resource is written for businesses and professionals in Northern New
-      Jersey, including:
-      <strong>
-        Bloomfield, Clifton, Elmwood Park, Hasbrouck Heights, Hoboken, Jersey
-        City, Lodi, Lyndhurst, Little Falls, Little Ferry, Newark, Nutley,
-        Paterson, Passaic, Paramus, Rutherford, Secaucus, Teaneck, Wood-Ridge,
-        and Wayne
-      </strong>.
-    </p>
-    <p>
-      While the focus is local, many of the frameworks below apply to companies
-      operating across the broader U.S. market.
-    </p>
-  </section>
+      <div class="topbar">
+        <a class="btn btn-primary" href="https://hiringsolutionsgroup.com/business-solutions/" target="_blank" rel="noopener noreferrer">
+          Visit the Business Solutions Service Page →
+        </a>
+        <a class="btn" href="#framework">View the 3-step framework</a>
+        <a class="btn" href="#service-area">Service area</a>
+      </div>
+    </header>
 
-  <section class="card">
-    <h2>What “Business Solutions” Typically Includes</h2>
-    <ul>
-      <li><strong>Strategic clarity:</strong> priorities, goals, and execution focus</li>
-      <li><strong>Leadership alignment:</strong> roles, decision rights, accountability</li>
-      <li><strong>Team effectiveness:</strong> communication, cohesion, performance</li>
-      <li><strong>Change support:</strong> restructuring, growth phases, transitions</li>
-      <li><strong>People strategy:</strong> retention, capability building, hiring planning</li>
-    </ul>
-  </section>
+    <main class="grid">
+      <section class="card span-2" id="service-area">
+        <h2>Service Area Focus</h2>
+        <p class="muted">
+          Servicing businesses and individuals in Northern New Jersey & throughout the United States.
+        </p>
+        <p>
+          This resource is written for businesses and professionals across Northern New Jersey, including:
+          <strong>
+            Bloomfield, Clifton, Elmwood Park, Hasbrouck Heights, Hoboken, Jersey City, Lodi, Lyndhurst, Little Falls,
+            Little Ferry, Newark, Nutley, Paterson, Passaic, Paramus, Rutherford, Secaucus, Teaneck, Wood-Ridge, and Wayne
+          </strong>.
+        </p>
+        <p class="muted">
+          Many frameworks below also apply to organizations operating across the broader U.S. market.
+        </p>
 
-  <section class="card">
-    <h2>Common Local Growth Scenarios (Northern NJ)</h2>
-    <p>
-      Companies in markets like Passaic, Bergen, Essex, and Hudson counties often
-      run into similar “growth pain” patterns:
-    </p>
-    <ul>
-      <li>Scaling operations faster than management structure</li>
-      <li>Founder-led decision-making slowing execution</li>
-      <li>Team friction during rapid hiring or reorganization</li>
-      <li>Unclear KPIs and inconsistent accountability</li>
-      <li>Leadership transitions without a defined plan</li>
-    </ul>
-  </section>
+        <div class="pill-row" aria-label="Local areas">
+          <span class="pill">Passaic County</span>
+          <span class="pill">Bergen County</span>
+          <span class="pill">Essex County</span>
+          <span class="pill">Hudson County</span>
+          <span class="pill">Northern NJ / NYC Corridor</span>
+        </div>
+      </section>
 
-  <section class="card">
-    <h2>A Simple 3-Step Consulting Framework</h2>
-    <ol>
-      <li>
-        <strong>Assess:</strong> clarify goals, constraints, and what’s breaking in execution
-      </li>
-      <li>
-        <strong>Align:</strong> define roles, decisions, priorities, and operating rhythm
-      </li>
-      <li>
-        <strong>Implement:</strong> build measurable actions, feedback loops, and leadership habits
-      </li>
-    </ol>
-  </section>
+      <section class="card">
+        <h2>What “Business Solutions” Typically Includes</h2>
+        <ul>
+          <li><strong>Strategic clarity:</strong> priorities, goals, and execution focus</li>
+          <li><strong>Leadership alignment:</strong> roles, decision rights, and accountability</li>
+          <li><strong>Team effectiveness:</strong> communication, cohesion, and performance rhythm</li>
+          <li><strong>Change support:</strong> restructuring, growth phases, and transitions</li>
+          <li><strong>People strategy:</strong> retention, capability building, and hiring planning</li>
+        </ul>
+        <p class="muted">
+          These areas are often connected—clarity improves alignment, alignment improves execution, and execution
+          strengthens results.
+        </p>
+      </section>
 
-  <section class="card">
-    <h2>Primary Reference (Service Page)</h2>
-    <p>
-      For the full overview of business solutions consulting services, see:
-    </p>
-    <p class="cta">
-      👉
-      <a
-        href="https://hiringsolutionsgroup.com/business-solutions/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Business Solutions Consulting – Hiring Solutions Group
-      </a>
-    </p>
-    <p>
-      Tip: Keep the link count low and relevant. One strong contextual reference
-      is usually better than many repeated links.
-    </p>
-  </section>
+      <section class="card">
+        <h2>Common Local Growth Scenarios (Northern NJ)</h2>
+        <p>
+          Companies in the Passaic–Bergen–Essex–Hudson county cluster often encounter similar growth patterns:
+        </p>
+        <ul>
+          <li>Scaling operations faster than management structure</li>
+          <li>Founder-led decision-making slowing execution</li>
+          <li>Team friction during rapid hiring or reorganization</li>
+          <li>Unclear KPIs and inconsistent accountability</li>
+          <li>Leadership transitions without a defined plan</li>
+        </ul>
+      </section>
 
-  <footer>
-    <p>
-      Note: This GitHub page is intended as an educational resource and local
-      reference hub for Northern New Jersey businesses researching consulting
-      frameworks and leadership alignment.
-    </p>
-  </footer>
+      <section class="card span-2" id="framework">
+        <h2>A Simple 3-Step Consulting Framework</h2>
+        <ol>
+          <li><strong>Assess:</strong> clarify goals, constraints, and what’s breaking in execution</li>
+          <li><strong>Align:</strong> define roles, decisions, priorities, and operating rhythm</li>
+          <li><strong>Implement:</strong> build measurable actions, feedback loops, and leadership habits</li>
+        </ol>
+        <p class="muted">
+          If you’re evaluating consulting support, a structured framework makes it easier to assess fit and measure outcomes.
+        </p>
+      </section>
+
+      <section class="card span-2">
+        <h2>Primary Business Solutions Consulting Reference</h2>
+        <p>
+          For the full overview of business solutions consulting services, visit the primary service page:
+        </p>
+
+        <div class="cta-box" role="region" aria-label="Primary reference call to action">
+          <div class="cta-copy">
+            <strong>Business Solutions Consulting – Hiring Solutions Group</strong>
+            <span class="muted">
+              Explore the full service overview, including how consulting supports growth, leadership alignment,
+              and confident transitions across Northern New Jersey and beyond.
+            </span>
+          </div>
+
+          <a class="btn btn-primary" href="https://hiringsolutionsgroup.com/business-solutions/" target="_blank" rel="noopener noreferrer">
+            View Service Page →
+          </a>
+        </div>
+
+        <p class="muted">
+          Tip: Keeping one strong, contextual reference is typically more effective than repeating many links.
+        </p>
+      </section>
+
+      <section class="card span-2">
+        <h2>Local Entity Note</h2>
+        <p class="muted">
+          Hiring Solutions Group provides executive recruitment, business consulting, and leadership advisory support
+          for organizations throughout Northern New Jersey and the New York City metropolitan area.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        This GitHub page is an educational resource and localized reference hub for Northern New Jersey businesses researching
+        consulting frameworks and leadership alignment.
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
